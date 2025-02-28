@@ -1,0 +1,150 @@
+<testsuites id="" name="" tests="8" failures="2" skipped="2" errors="0" time="110.958028">
+<testsuite name="DemoProductVerificationTest.spec.ts" timestamp="2025-02-28T02:00:55.277Z" hostname="chromium" tests="8" failures="2" skipped="2" time="107.723" errors="0">
+<testcase name="Demo Product Verification Test Suite › https://the-internet.herokuapp.com/" classname="DemoProductVerificationTest.spec.ts" time="4.516">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-b9c62-the-internet-herokuapp-com--chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-b9c62-the-internet-herokuapp-com--chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › https://the-internet.herokuapp.com/ iframe + window" classname="DemoProductVerificationTest.spec.ts" time="3.705">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-5d4b1-herokuapp-com-iframe-window-chromium/video-1.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-5d4b1-herokuapp-com-iframe-window-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-5d4b1-herokuapp-com-iframe-window-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › https://the-internet.herokuapp.com/ alerts" classname="DemoProductVerificationTest.spec.ts" time="62.218">
+<failure message="DemoProductVerificationTest.spec.ts:52:7 https://the-internet.herokuapp.com/ alerts" type="FAILURE">
+<![CDATA[  [chromium] › DemoProductVerificationTest.spec.ts:52:7 › Demo Product Verification Test Suite › https://the-internet.herokuapp.com/ alerts 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('.sjdhfsjdhf')
+
+
+      58 |       page.on('dialog', dialog => dialog.accept('Accepted'));
+      59 |
+    > 60 |       await page.locator('.sjdhfsjdhf').click();
+         |                                         ^
+      61 |   });
+      62 |
+      63 |   test.skip('https://the-internet.herokuapp.com/ Download', async ({page}) => {
+        at /Users/bidyashreepaul/Documents/training2025/playwright_training/tests/demo/DemoProductVerificationTest.spec.ts:60:41
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-72479-ternet-herokuapp-com-alerts-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › https://the-internet.herokuapp.com/ Download" classname="DemoProductVerificationTest.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › Datepicker" classname="DemoProductVerificationTest.spec.ts" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › page has more than 20 images" classname="DemoProductVerificationTest.spec.ts" time="3.876">
+<failure message="DemoProductVerificationTest.spec.ts:99:7 page has more than 20 images" type="FAILURE">
+<![CDATA[  [chromium] › DemoProductVerificationTest.spec.ts:99:7 › Demo Product Verification Test Suite › page has more than 20 images 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 1
+    Received:   1
+
+      100 |     await page.goto('https://the-internet.herokuapp.com/');
+      101 |     const images = await page.locator('//img').count();
+    > 102 |     expect(images).toBeGreaterThan(1);
+          |                    ^
+      103 |   });
+      104 |
+      105 |   test('zerostep demo', async ({ page }) => {
+        at /Users/bidyashreepaul/Documents/training2025/playwright_training/tests/demo/DemoProductVerificationTest.spec.ts:102:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-b7dda-age-has-more-than-20-images-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › zerostep demo" classname="DemoProductVerificationTest.spec.ts" time="25.569">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-9b1e8-on-Test-Suite-zerostep-demo-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-9b1e8-on-Test-Suite-zerostep-demo-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Demo Product Verification Test Suite › https://the-internet.herokuapp.com/ Download AI" classname="DemoProductVerificationTest.spec.ts" time="7.839">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/DemoProductVerificationTes-f2c11-t-herokuapp-com-Download-AI-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/DemoProductVerificationTes-f2c11-t-herokuapp-com-Download-AI-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

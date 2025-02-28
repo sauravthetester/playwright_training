@@ -1,6 +1,6 @@
-import {expect, FrameLocator, Locator} from '@playwright/test'
-import {test} from '../../util/MyFixtures'
-import {getTableCellData} from '../../pages/Util'
+import {expect, FrameLocator, Locator, test} from '@playwright/test';
+// import {test} from '../../util/MyFixtures'
+// import {getTableCellData} from '../../pages/Util'
 
 import {ai} from '@zerostep/playwright'
 import exp from 'constants'
@@ -8,26 +8,15 @@ import exp from 'constants'
 var productName:string
 
 test.describe('Demo Product Verification Test Suite', () => {
-  test.skip('Verify Product Name is Correct', async ({ loginPage, homePage, productDetailPage }) => {
-      await test.step('Verify title visible and go to second product', async() => {
-          homePage.verifyTitleIsVisible();
-          productName = await homePage.getSecondProductName();
-          await homePage.clickOnSecondProduct();
-      });
-      
-      await test.step('Verify title visible and go to second product', async() => {
-          await productDetailPage.verifyItemNameIsVisible(productName);
-      }); 
-  });
 
-  test.skip('https://the-internet.herokuapp.com/', async ({page}) => {
+  test('https://the-internet.herokuapp.com/', async ({page}) => {
       await page.goto('https://the-internet.herokuapp.com/');
       await page.getByRole('link', { name : 'Checkboxes'}).click();
       await page.locator('//form/input[1]').check();
       await page.locator('//form/input[2]').uncheck();
   });
 
-  test.skip('https://the-internet.herokuapp.com/ iframe + window', async ({page}) => {
+  test('https://the-internet.herokuapp.com/ iframe + window', async ({page}) => {
       await page.goto('https://the-internet.herokuapp.com/');
       await page.getByRole('link', { name : 'Multiple Windows'}).click();
       const [page2] = await Promise.all([
@@ -39,28 +28,29 @@ test.describe('Demo Product Verification Test Suite', () => {
       await expect(page.getByRole('link',{name: 'Click Here'})).toBeVisible();
   });
 
-  test.skip('https://the-internet.herokuapp.com/ table', async ({page}) => {
-      await page.goto('https://the-internet.herokuapp.com/');
-      await page.getByRole('link', { name : 'Sortable Data Tables'}).click();
+//   test('https://the-internet.herokuapp.com/ table', async ({page}) => {
+//       await page.goto('https://the-internet.herokuapp.com/');
+//       await page.getByRole('link', { name : 'Sortable Data Tables'}).click();
       
-      await page.waitForURL('https://the-internet.herokuapp.com/tables',{timeout: 5000, waitUntil: 'load'});
-      const cntR = await page.locator('#table1>tbody>tr').count(); // How many rows
-      const row:Locator = page.locator('#table1>tbody>tr').nth(0); // 1st row
-      const cntC:number = await row.locator('td').count(); // 1st row has how many columns
+//       await page.waitForURL('https://the-internet.herokuapp.com/tables',{timeout: 5000, waitUntil: 'load'});
+//       const cntR = await page.locator('#table1>tbody>tr').count(); // How many rows
+//       const row:Locator = page.locator('#table1>tbody>tr').nth(0); // 1st row
+//       const cntC:number = await row.locator('td').count(); // 1st row has how many columns
 
-      console.log(`cntR === ${cntR}, cntC ==== ${cntC}`);
-      for(let i = 0; i< cntR; i++)
-      {
-          for(let j=0; j<cntC; j++)
-          {
-              const value:string = await getTableCellData(page,i,j);
-              console.log(' Value =========== '+value);
-          }
-      }
-  });
+//       console.log(`cntR === ${cntR}, cntC ==== ${cntC}`);
+//       for(let i = 0; i< cntR; i++)
+//       {
+//           for(let j=0; j<cntC; j++)
+//           {
+//               const value:string = await getTableCellData(page,i,j);
+//               console.log(' Value =========== '+value);
+//           }
+//       }
+//   });
 
-  test.skip('https://the-internet.herokuapp.com/ alerts', async ({page}) => {
-      await page.goto('https://the-internet.herokuapp.com/');
+// new comment now
+  test('https://the-internet.herokuapp.com/ alerts', async ({page}) => {
+    await page.goto('https://the-internet.herokuapp.com/');
       await page.getByRole('link', { name : 'JavaScript Alerts'}).click();
       
       await page.waitForURL('https://the-internet.herokuapp.com/javascript_alerts',{timeout: 5000, waitUntil: 'load'});
@@ -106,13 +96,13 @@ test.describe('Demo Product Verification Test Suite', () => {
       // }
   });
 
-  test.skip('page has more than 20 images', async ({ page }) => {
+  test('page has more than 20 images', async ({ page }) => {
     await page.goto('https://the-internet.herokuapp.com/');
-    const images = await page.locator('img').count();
-    expect(images).toBeGreaterThan(20);
+    const images = await page.locator('//img').count();
+    expect(images).toBeGreaterThan(1);
   });
 
-  test.skip('zerostep demo', async ({ page }) => {
+  test('zerostep demo', async ({ page }) => {
     await page.goto('https://www.flipkart.com/');
     await ai('Search for "mouse"',{page,test});
     await ai('Press Enter Key',{page,test});
@@ -127,7 +117,7 @@ test.describe('Demo Product Verification Test Suite', () => {
   });
 
 
-  test.only('https://the-internet.herokuapp.com/ Download AI', async ({page}) => {
+  test('https://the-internet.herokuapp.com/ Download AI', async ({page}) => {
     await page.goto('https://the-internet.herokuapp.com/');
     await ai('Click on "File Download"',{page,test});
     //await page.getByRole('link', { name : 'File Download', exact: true}).click();

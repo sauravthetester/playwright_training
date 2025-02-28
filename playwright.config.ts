@@ -25,7 +25,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html',{open:'always'}]],
+  reporter: [['junit',{outputFile: 'results.xml'}]],
   maxFailures: 40,
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -37,7 +37,7 @@ export default defineConfig({
     baseURL: 'https://www.saucedemo.com/',
     trace: 'on',
     screenshot: 'only-on-failure',
-    headless: false,
+    headless: true,
     video: 'on',
     geolocation: { longitude: 12.492507, latitude: 41.890221 },
     permissions: ['geolocation'],

@@ -34,3 +34,12 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/*results.xml'
   condition: succeededOrFailed()
+
+schedules:
+  - cron: '20 8 * * 5'
+    displayName: 'Weekly Execution'
+    always: true
+    batch: false
+    branches:
+      include:
+        - master

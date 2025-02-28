@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test2": "npx playwright test --project=firefox"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

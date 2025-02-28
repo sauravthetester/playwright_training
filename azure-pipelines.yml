@@ -37,7 +37,7 @@ steps:
 
 schedules:
   - cron: '10 8 * * 5'
-    displayName: Weekly Execution
+    displayName: 'Weekly Execution'
     always: false
     batch: false
     branches:

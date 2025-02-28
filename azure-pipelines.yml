@@ -36,9 +36,9 @@ steps:
   condition: succeededOrFailed()
 
 schedules:
-  - cron: '10 8 * * 5'
+  - cron: '20 8 * * 5'
     displayName: 'Weekly Execution'
-    always: false
+    always: true
     batch: false
     branches:
       include:

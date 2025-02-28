@@ -97,6 +97,8 @@ test.describe('Demo Product Verification Test Suite', () => {
   });
 
   test('page has more than 20 images', async ({ page }) => {
+    console.log(` username ==============${process.env.USERNAME}`);
+    console.log(` password ==============${process.env.PASSWORD}`);
     await page.goto('https://the-internet.herokuapp.com/');
     const images = await page.locator('//img').count();
     expect(images).toBeGreaterThan(1);

@@ -23,7 +23,7 @@ export default defineConfig({
 
   timeout: 60000,
   /* Opt out of parallel tests on CI. */
-  workers: 1,
+  workers: 4,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['junit',{outputFile: 'results.xml'}]],
   maxFailures: 40,
